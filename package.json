@@ -1,0 +1,15 @@
+{
+  "name": "spiritual-center",
+  "version": "1.0.0",
+  "description": "A spiritual center website",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-navigation": "^0.3.5",
+    "markdown-it": "^13.0.2",
+    "markdown-it-anchor": "^8.6.7"
+  }
+}

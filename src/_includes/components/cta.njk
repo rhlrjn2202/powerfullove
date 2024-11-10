@@ -1,0 +1,7 @@
+{% macro cta(title, description, buttonText, buttonUrl) %}
+<section class="cta">
+    <h2>{{ title }}</h2>
+    <p>{{ description }}</p>
+    <a href="{{ buttonUrl }}" class="button">{{ buttonText }}</a>
+</section>
+{% endmacro %}

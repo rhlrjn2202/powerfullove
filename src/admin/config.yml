@@ -1,6 +1,11 @@
 backend:
   name: git-gateway
   branch: main
+  auth_endpoint: api/auth # Path to the auth endpoint
+
+# These lines should be added to your existing config
+local_backend: true # Enable local backend
+publish_mode: editorial_workflow
 
 media_folder: "src/assets/images"
 public_folder: "/assets/images"

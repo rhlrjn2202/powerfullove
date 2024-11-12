@@ -1,0 +1,22 @@
+---
+layout: base
+title: Prayer Requests
+---
+<h1>Prayer Requests</h1>
+<div class="prayer-request-form">
+    <form name="prayer-request" method="POST" data-netlify="true">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+            <label for="request">Prayer Request:</label>
+            <textarea id="request" name="request" required></textarea>
+        </div>
+        <button type="submit">Submit Prayer Request</button>
+    </form>
+</div>

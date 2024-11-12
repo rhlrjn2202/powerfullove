@@ -1,0 +1,12 @@
+---
+layout: base
+---
+<article class="post">
+    <h1>{{ title }}</h1>
+    {% if author %}<p class="author">By {{ author }}</p>{% endif %}
+    {% if date %}<time datetime="{{ date | dateIso }}">{{ date | dateDisplay }}</time>{% endif %}
+    
+    <div class="content">
+        {{ content | safe }}
+    </div>
+</article>

@@ -4,5 +4,14 @@ title: Teachings
 ---
 <h1>Spiritual Teachings</h1>
 <div class="teachings-grid">
-    <!-- Teachings will be dynamically populated -->
+    {%- for teaching in collections.teachings | reverse -%}
+    <article class="teaching-card">
+        <h2>{{ teaching.data.title }}</h2>
+        <p class="author">By {{ teaching.data.author }}</p>
+        <div class="teaching-excerpt">
+            {{ teaching.templateContent | excerpt | safe }}
+        </div>
+        <a href="{{ teaching.url }}" class="read-more">Read more</a>
+    </article>
+    {%- endfor -%}
 </div>

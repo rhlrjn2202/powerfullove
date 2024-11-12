@@ -4,5 +4,14 @@ title: Blog
 ---
 <h1>Spiritual Blog</h1>
 <div class="blog-posts">
-    <!-- Blog posts will be dynamically populated -->
+    {%- for post in collections.blog | reverse -%}
+    <article class="blog-post">
+        <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+        <time datetime="{{ post.date | dateIso }}">{{ post.date | dateDisplay }}</time>
+        <div class="post-excerpt">
+            {{ post.templateContent | excerpt | safe }}
+        </div>
+        <a href="{{ post.url }}" class="read-more">Read more</a>
+    </article>
+    {%- endfor -%}
 </div>

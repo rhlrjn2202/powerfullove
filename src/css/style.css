@@ -102,29 +102,91 @@ main {
   padding: var(--mobile-padding);
 }
 
-/* Contact Form */
-.contact-form {
-  max-width: 600px;
-  margin: 2rem auto;
-}
-
-.contact-info {
-  margin-bottom: 2rem;
-}
-
-.contact-methods {
+/* Blog Posts */
+.blog-posts {
   display: grid;
-  gap: 1rem;
-  margin-bottom: 2rem;
+  gap: 2rem;
+  margin: 2rem 0;
 }
 
-.contact-method {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+.blog-post {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* Rest of the existing styles... */
+.blog-post h2 {
+  margin-bottom: 0.5rem;
+}
+
+.blog-post time {
+  color: var(--secondary-color);
+  font-size: 0.9rem;
+}
+
+.post-excerpt {
+  margin: 1rem 0;
+}
+
+/* Events Grid */
+.events-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  margin: 2rem 0;
+}
+
+.event-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.event-card time {
+  color: var(--secondary-color);
+  font-size: 0.9rem;
+  display: block;
+  margin: 0.5rem 0;
+}
+
+/* Teachings Grid */
+.teachings-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  margin: 2rem 0;
+}
+
+.teaching-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.teaching-card .author {
+  color: var(--secondary-color);
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+}
+
+.teaching-excerpt {
+  margin: 1rem 0;
+}
+
+.read-more {
+  display: inline-block;
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
 
 /* Media Queries */
 @media (max-width: 768px) {
@@ -152,24 +214,15 @@ main {
   nav a {
     padding: 0.75rem;
   }
-  
-  .hero {
-    padding: 2rem 1rem;
-  }
-  
-  form {
-    padding: 0 1rem;
+
+  .events-grid,
+  .teachings-grid {
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 480px) {
   :root {
     --mobile-padding: 0.75rem;
-  }
-  
-  .button {
-    display: block;
-    width: 100%;
-    text-align: center;
   }
 }

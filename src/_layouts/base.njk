@@ -6,11 +6,17 @@
     <meta name="description" content="Find peace, wisdom, and community at our Spiritual Center">
     <title>{{ title }} - Spiritual Center</title>
     <link rel="stylesheet" href="/css/style.css">
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
     <header>
         <nav>
-            <ul>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
                 <li><a href="/">Home</a></li>
                 <li><a href="/about">About Us</a></li>
                 <li><a href="/teachings">Teachings</a></li>
@@ -19,6 +25,7 @@
                 <li><a href="/donate">Donate</a></li>
                 <li><a href="/blog">Blog</a></li>
                 <li><a href="/prayer-requests">Prayer Requests</a></li>
+                <li><a href="/contact">Contact Us</a></li>
             </ul>
         </nav>
     </header>
@@ -28,5 +35,11 @@
     <footer>
         <p>&copy; {{ page.date.getFullYear() }} Spiritual Center. All rights reserved.</p>
     </footer>
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>

@@ -14,11 +14,6 @@ module.exports = function(eleventyConfig) {
     return DateTime.fromJSDate(date).toLocaleString(DateTime.DATE_FULL);
   });
 
-  // Sort by date
-  eleventyConfig.addFilter("sortByDate", arr => {
-    return arr.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
-  });
-
   // Excerpt filter
   eleventyConfig.addFilter("excerpt", content => {
     if (!content) return '';
@@ -33,15 +28,15 @@ module.exports = function(eleventyConfig) {
 
   // Collections
   eleventyConfig.addCollection("blog", collection => {
-    return collection.getFilteredByGlob("src/blog/*.md");
+    return collection.getFilteredByGlob("src/blog/*.md").sort((a, b) => b.date - a.date);
   });
 
   eleventyConfig.addCollection("events", collection => {
-    return collection.getFilteredByGlob("src/events/*.md");
+    return collection.getFilteredByGlob("src/events/*.md").sort((a, b) => a.date - b.date);
   });
 
   eleventyConfig.addCollection("teachings", collection => {
-    return collection.getFilteredByGlob("src/teachings/*.md");
+    return collection.getFilteredByGlob("src/teachings/*.md").sort((a, b) => b.date - a.date);
   });
   
   return {

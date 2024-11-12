@@ -4,7 +4,7 @@ title: Events
 ---
 <h1>Upcoming Events</h1>
 <div class="events-grid">
-    {%- for event in collections.events | sortByDate -%}
+    {%- for event in collections.events | reverse -%}
     <div class="event-card">
         <h2>{{ event.data.title }}</h2>
         <time datetime="{{ event.data.date | dateIso }}">{{ event.data.date | dateDisplay }}</time>

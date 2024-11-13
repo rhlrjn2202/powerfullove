@@ -1,20 +1,11 @@
-/* Base styles */
+/* Color Variables */
 :root {
-  --primary-color: #0A3875;  /* Navy blue from logo */
-  --primary-light: #1565C0;  /* Lighter navy for hover states */
-  --secondary-color: #C4A55F; /* Gold from logo */
-  --accent-color: #E5C992;   /* Lighter gold for hover states */
-  --text-light: #ffffff;
+  --primary-blue: #0B3C5D;  /* Dark blue from logo */
+  --accent-gold: #D4AF37;   /* Gold from logo */
+  --text-white: #FFFFFF;
   --text-dark: #333333;
-  --surface-color: #ffffff;
-  --background-color: #f5f7fa;
   --max-width: 1200px;
   --mobile-padding: 1rem;
-  --elevation-1: 0 2px 4px rgba(0,0,0,0.1);
-  --elevation-2: 0 4px 8px rgba(0,0,0,0.12);
-  --elevation-3: 0 8px 16px rgba(0,0,0,0.14);
-  --border-radius: 4px;
-  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Reset and base styles */
@@ -25,28 +16,39 @@
 }
 
 body {
-  font-family: Roboto, system-ui, -apple-system, sans-serif;
+  font-family: 'Roboto', system-ui, -apple-system, sans-serif;
   line-height: 1.6;
   margin: 0;
   padding: 0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: var(--background-color);
-  color: var(--text-dark);
+  background-color: #f8f9fa;
 }
 
-main {
-  flex: 1;
+/* Header and Navigation */
+header {
+  background: var(--primary-blue);
+  padding: var(--mobile-padding);
   width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+nav {
+  position: relative;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: var(--mobile-padding);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 /* Logo Styles */
 .logo {
-  margin-right: auto;
+  margin-right: 2rem;
   padding: 0.5rem 0;
 }
 
@@ -57,30 +59,34 @@ main {
 }
 
 .logo-image {
-  height: 40px;
+  height: 50px;
   width: auto;
+  padding: 5px;
 }
 
-/* Header and Navigation */
-header {
-  background: var(--primary-color);
-  width: 100%;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: var(--elevation-2);
-}
-
-nav {
-  position: relative;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0.5rem var(--mobile-padding);
+/* Navigation Menu */
+.nav-menu {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
+nav a {
+  color: var(--text-white);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--accent-gold);
+}
+
+/* Mobile Menu Toggle */
 .menu-toggle {
   display: none;
   background: none;
@@ -93,76 +99,26 @@ nav {
 .menu-toggle span {
   display: block;
   width: 25px;
-  height: 2px;
-  background-color: var(--secondary-color);
-  margin: 6px 0;
-  transition: var(--transition);
+  height: 3px;
+  background-color: var(--text-white);
+  margin: 5px 0;
+  transition: all 0.3s ease;
 }
 
-.nav-menu {
-  display: flex;
-  gap: 1rem;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  align-items: center;
-}
-
-nav a {
-  color: var(--text-light);
-  text-decoration: none;
-  font-weight: 500;
-  padding: 0.5rem 1rem;
-  display: block;
-  transition: var(--transition);
-  border-radius: var(--border-radius);
-}
-
-nav a:hover {
-  color: var(--secondary-color);
-}
-
-/* Hero Section */
-.hero {
-  background: var(--primary-color);
-  color: var(--text-light);
-  text-align: center;
-  padding: 4rem 1rem;
-  margin-bottom: 2rem;
-}
-
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: var(--secondary-color);
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-}
-
-.button {
-  display: inline-block;
-  padding: 0.8rem 2rem;
-  background: var(--secondary-color);
-  color: var(--primary-color);
-  text-decoration: none;
-  border-radius: var(--border-radius);
-  font-weight: 500;
-  transition: var(--transition);
-}
-
-.button:hover {
-  background: var(--accent-color);
-  transform: translateY(-2px);
+/* Main Content */
+main {
+  flex: 1;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 80px auto 2rem; /* Added top margin to account for fixed header */
+  padding: var(--mobile-padding);
 }
 
 /* Footer Styles */
 .site-footer {
-  background: var(--primary-color);
-  color: var(--text-light);
-  padding: 3rem var(--mobile-padding);
+  background: var(--primary-blue);
+  color: var(--text-white);
+  padding: 3rem var(--mobile-padding) 1rem;
   margin-top: auto;
 }
 
@@ -175,7 +131,7 @@ nav a:hover {
 }
 
 .footer-section h3 {
-  color: var(--secondary-color);
+  color: var(--accent-gold);
   margin-bottom: 1rem;
 }
 
@@ -183,18 +139,14 @@ nav a:hover {
   list-style: none;
 }
 
-.footer-section ul li {
-  margin-bottom: 0.5rem;
-}
-
 .footer-section a {
-  color: var(--text-light);
+  color: var(--text-white);
   text-decoration: none;
-  transition: var(--transition);
+  transition: color 0.3s ease;
 }
 
 .footer-section a:hover {
-  color: var(--secondary-color);
+  color: var(--accent-gold);
 }
 
 .social-links {
@@ -205,8 +157,8 @@ nav a:hover {
 .footer-bottom {
   max-width: var(--max-width);
   margin: 2rem auto 0;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
   text-align: center;
 }
 
@@ -223,41 +175,31 @@ nav a:hover {
     left: 0;
     right: 0;
     flex-direction: column;
-    background: var(--primary-color);
+    background: var(--primary-blue);
     padding: 1rem;
     text-align: center;
-    box-shadow: var(--elevation-2);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   }
 
   .nav-menu.active {
     display: flex;
   }
 
-  nav a {
-    padding: 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  nav {
+    padding: 0.5rem 1rem;
   }
 
-  nav a:last-child {
-    border-bottom: none;
-  }
-
-  .footer-content {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .social-links {
-    justify-content: center;
+  .logo-image {
+    height: 40px;
   }
 }
 
 @media (max-width: 480px) {
-  .hero h1 {
-    font-size: 2rem;
+  :root {
+    --mobile-padding: 0.75rem;
   }
 
-  .hero p {
-    font-size: 1rem;
+  .footer-content {
+    grid-template-columns: 1fr;
   }
 }

@@ -12,7 +12,9 @@
 <body{% if page.url == "/" %} class="home-page"{% endif %}>
     {% include "header.njk" %}
     <main>
-        {{ content | safe }}
+        <div class="page-content">
+            {{ content | safe }}
+        </div>
     </main>
     {% include "footer.njk" %}
     <script>

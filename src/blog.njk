@@ -1,6 +1,11 @@
 ---
 layout: base
 title: Blog
+pagination:
+  data: collections.blog
+  size: 6
+  alias: posts
+  reverse: true
 ---
 <div class="page-header">
     <h1>Our Blog</h1>
@@ -8,7 +13,7 @@ title: Blog
 </div>
 
 <div class="blog-grid">
-    {%- for post in collections.blog | reverse -%}
+    {%- for post in pagination.items -%}
     <article class="blog-card">
         <div class="blog-card-image">
             {% if post.data.featuredImage %}
@@ -28,3 +33,32 @@ title: Blog
     </article>
     {%- endfor -%}
 </div>
+
+{% if pagination.pages.length > 1 %}
+<nav class="pagination" aria-label="Blog pagination">
+    <ul class="pagination-list">
+        {% if pagination.href.previous %}
+        <li>
+            <a href="{{ pagination.href.previous }}" class="pagination-previous">← Previous</a>
+        </li>
+        {% endif %}
+        
+        {% for pageUrl in pagination.pages %}
+        <li>
+            <a href="{{ pagination.hrefs[ loop.index0 ] }}"
+               class="pagination-link {% if page.url == pagination.hrefs[ loop.index0 ] %}is-current{% endif %}"
+               aria-label="Page {{ loop.index }}"
+               {% if page.url == pagination.hrefs[ loop.index0 ] %}aria-current="page"{% endif %}>
+                {{ loop.index }}
+            </a>
+        </li>
+        {% endfor %}
+
+        {% if pagination.href.next %}
+        <li>
+            <a href="{{ pagination.href.next }}" class="pagination-next">Next →</a>
+        </li>
+        {% endif %}
+    </ul>
+</nav>
+{% endif %}

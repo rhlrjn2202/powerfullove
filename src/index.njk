@@ -2,13 +2,13 @@
 layout: base
 title: Home
 ---
-<div class="hero-section">
+<div class="hero-section" style="background-image: linear-gradient(rgba(11, 60, 93, 0.7), rgba(11, 60, 93, 0.8)), url('{{ home.heroImage }}');">
     <div class="hero-content">
-        <h1>Empowering Through Love and Wisdom</h1>
-        <p>Join us in our mission to spread love, wisdom, and spiritual enlightenment to create positive change in the world.</p>
+        <h1>{{ home.heroTitle }}</h1>
+        <p>{{ home.heroDescription }}</p>
         <div class="hero-buttons">
-            <a href="/about" class="btn-primary">Learn More</a>
-            <a href="/contact" class="btn-secondary">Get Involved</a>
+            <a href="{{ home.primaryButtonLink }}" class="btn-primary">{{ home.primaryButtonText }}</a>
+            <a href="{{ home.secondaryButtonLink }}" class="btn-secondary">{{ home.secondaryButtonText }}</a>
         </div>
     </div>
 </div>

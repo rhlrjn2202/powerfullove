@@ -1,16 +1,30 @@
 backend:
   name: git-gateway
   branch: main
-  auth_endpoint: api/auth # Path to the auth endpoint
+  auth_endpoint: api/auth
 
-# These lines should be added to your existing config
-local_backend: true # Enable local backend
+local_backend: true
 publish_mode: editorial_workflow
 
 media_folder: "src/assets/images"
 public_folder: "/assets/images"
 
 collections:
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - name: "home"
+        label: "Home Page"
+        file: "src/_data/home.json"
+        fields:
+          - {label: "Hero Title", name: "heroTitle", widget: "string"}
+          - {label: "Hero Description", name: "heroDescription", widget: "text"}
+          - {label: "Hero Background Image", name: "heroImage", widget: "image", required: true}
+          - {label: "Primary Button Text", name: "primaryButtonText", widget: "string"}
+          - {label: "Primary Button Link", name: "primaryButtonLink", widget: "string"}
+          - {label: "Secondary Button Text", name: "secondaryButtonText", widget: "string"}
+          - {label: "Secondary Button Link", name: "secondaryButtonLink", widget: "string"}
+
   - name: "blog"
     label: "Blog"
     folder: "src/blog"

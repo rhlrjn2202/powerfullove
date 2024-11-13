@@ -55,6 +55,7 @@ nav {
 .logo {
   height: 100%;
   padding: 10px 0;
+  margin-right: 2rem;
 }
 
 .logo-image {
@@ -64,9 +65,10 @@ nav {
 
 .nav-menu {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
   list-style: none;
   align-items: center;
+  margin-left: auto;
 }
 
 nav a {
@@ -74,11 +76,14 @@ nav a {
   text-decoration: none;
   font-weight: 500;
   font-size: 0.95rem;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
 }
 
 nav a:hover {
   color: var(--accent-gold);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .menu-toggle {
@@ -99,13 +104,13 @@ nav a:hover {
 }
 
 .donate-button {
-  margin-left: 1rem;
+  margin-left: 2rem;
 }
 
 .btn-donate {
   background: var(--accent-gold);
   color: var(--primary-blue) !important;
-  padding: 0.5rem 1.25rem;
+  padding: 0.5rem 1.5rem !important;
   border-radius: 25px;
   font-weight: 600;
   transition: all 0.3s ease;
@@ -114,8 +119,10 @@ nav a:hover {
 .btn-donate:hover {
   background: #e6c349;
   transform: translateY(-2px);
+  color: var(--primary-blue) !important;
 }
 
+/* Rest of the CSS remains the same */
 /* Footer */
 .site-footer {
   background: var(--primary-blue);
@@ -230,6 +237,16 @@ nav a:hover {
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+  .nav-menu {
+    gap: 1.5rem;
+  }
+
+  .donate-button {
+    margin-left: 1.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
@@ -260,6 +277,11 @@ nav a:hover {
     display: block;
     padding: 0.75rem 1rem;
     text-align: center;
+    border-radius: 0;
+  }
+
+  .nav-menu a:hover {
+    background: rgba(255, 255, 255, 0.05);
   }
 
   .donate-button {
@@ -296,5 +318,9 @@ nav a:hover {
 
   .hero-content h1 {
     font-size: 2rem;
+  }
+
+  .logo {
+    margin-right: 1rem;
   }
 }

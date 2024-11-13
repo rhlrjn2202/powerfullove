@@ -1,12 +1,12 @@
 /* Color Variables */
 :root {
-  --primary-blue: #0B3C5D;  /* Dark blue from logo */
-  --accent-gold: #D4AF37;   /* Gold from logo */
+  --primary-blue: #0B3C5D;
+  --accent-gold: #D4AF37;
   --text-white: #FFFFFF;
   --text-dark: #333333;
   --max-width: 1200px;
   --mobile-padding: 1rem;
-  --header-height: 80px;
+  --header-height: 70px;
 }
 
 /* Base styles */
@@ -49,13 +49,12 @@ nav {
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
 .logo {
   height: 100%;
-  padding: 10px 0;
-  margin-right: 2rem;
+  padding: 8px 0;
+  margin-right: 3rem;
 }
 
 .logo-image {
@@ -65,10 +64,17 @@ nav {
 
 .nav-menu {
   display: flex;
-  gap: 2rem;
   list-style: none;
   align-items: center;
-  margin-left: auto;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.nav-menu li {
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 nav a {
@@ -76,14 +82,15 @@ nav a {
   text-decoration: none;
   font-weight: 500;
   font-size: 0.95rem;
+  padding: 0 1rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
   transition: all 0.3s ease;
-  padding: 0.5rem 0.75rem;
-  border-radius: 4px;
 }
 
 nav a:hover {
   color: var(--accent-gold);
-  background: rgba(255, 255, 255, 0.1);
 }
 
 .menu-toggle {
@@ -104,7 +111,7 @@ nav a:hover {
 }
 
 .donate-button {
-  margin-left: 2rem;
+  margin-left: auto;
 }
 
 .btn-donate {
@@ -113,16 +120,15 @@ nav a:hover {
   padding: 0.5rem 1.5rem !important;
   border-radius: 25px;
   font-weight: 600;
-  transition: all 0.3s ease;
+  margin-left: 1rem;
+  height: auto !important;
 }
 
 .btn-donate:hover {
   background: #e6c349;
   transform: translateY(-2px);
-  color: var(--primary-blue) !important;
 }
 
-/* Rest of the CSS remains the same */
 /* Footer */
 .site-footer {
   background: var(--primary-blue);
@@ -238,18 +244,19 @@ nav a:hover {
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .nav-menu {
-    gap: 1.5rem;
+  nav {
+    padding: 0 1.5rem;
   }
-
-  .donate-button {
-    margin-left: 1.5rem;
+  
+  nav a {
+    padding: 0 0.75rem;
   }
 }
 
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
+    margin-left: auto;
   }
 
   .nav-menu {
@@ -261,8 +268,7 @@ nav a:hover {
     flex-direction: column;
     background: var(--primary-blue);
     padding: 1rem;
-    gap: 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: auto;
   }
 
   .nav-menu.active {
@@ -271,26 +277,23 @@ nav a:hover {
 
   .nav-menu li {
     width: 100%;
+    height: auto;
   }
 
-  .nav-menu a {
-    display: block;
+  nav a {
     padding: 0.75rem 1rem;
-    text-align: center;
-    border-radius: 0;
-  }
-
-  .nav-menu a:hover {
-    background: rgba(255, 255, 255, 0.05);
+    height: auto;
+    justify-content: center;
   }
 
   .donate-button {
-    margin: 1rem 0;
+    margin: 0.5rem 0;
   }
 
   .btn-donate {
-    display: inline-block;
-    width: auto;
+    margin: 0;
+    width: 100%;
+    text-align: center;
   }
 
   .hero-content h1 {
@@ -312,15 +315,11 @@ nav a:hover {
 }
 
 @media (max-width: 480px) {
-  :root {
-    --mobile-padding: 1rem;
+  .logo {
+    margin-right: 1rem;
   }
 
   .hero-content h1 {
     font-size: 2rem;
-  }
-
-  .logo {
-    margin-right: 1rem;
   }
 }

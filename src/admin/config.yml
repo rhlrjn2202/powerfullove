@@ -10,21 +10,6 @@ media_folder: "src/assets/images"
 public_folder: "/assets/images"
 
 collections:
-  - name: "settings"
-    label: "Site Settings"
-    files:
-      - name: "home"
-        label: "Home Page"
-        file: "src/_data/home.json"
-        fields:
-          - {label: "Hero Title", name: "heroTitle", widget: "string"}
-          - {label: "Hero Description", name: "heroDescription", widget: "text"}
-          - {label: "Hero Background Image", name: "heroImage", widget: "image", required: true}
-          - {label: "Primary Button Text", name: "primaryButtonText", widget: "string"}
-          - {label: "Primary Button Link", name: "primaryButtonLink", widget: "string"}
-          - {label: "Secondary Button Text", name: "secondaryButtonText", widget: "string"}
-          - {label: "Secondary Button Link", name: "secondaryButtonLink", widget: "string"}
-
   - name: "blog"
     label: "Blog"
     folder: "src/blog"
@@ -33,6 +18,8 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Featured Image", name: "featuredImage", widget: "image", required: true}
+      - {label: "Description", name: "description", widget: "text"}
       - {label: "Body", name: "body", widget: "markdown"}
 
   - name: "events"
@@ -51,4 +38,20 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Author", name: "author", widget: "string"}
+      - {label: "Featured Image", name: "featuredImage", widget: "image", required: true}
       - {label: "Content", name: "body", widget: "markdown"}
+
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - name: "home"
+        label: "Home Page"
+        file: "src/_data/home.json"
+        fields:
+          - {label: "Hero Title", name: "heroTitle", widget: "string"}
+          - {label: "Hero Description", name: "heroDescription", widget: "text"}
+          - {label: "Hero Background Image", name: "heroImage", widget: "image", required: true}
+          - {label: "Primary Button Text", name: "primaryButtonText", widget: "string"}
+          - {label: "Primary Button Link", name: "primaryButtonLink", widget: "string"}
+          - {label: "Secondary Button Text", name: "secondaryButtonText", widget: "string"}
+          - {label: "Secondary Button Link", name: "secondaryButtonLink", widget: "string"}

@@ -1,9 +1,9 @@
 {
-    "heroTitle": "Empowering Through Love and Wisdom",
-    "heroDescription": "Join us in our mission to spread love, wisdom, and spiritual enlightenment to create positive change in the world.",
-    "heroImage": "/assets/images/hero-bg.jpg",
-    "primaryButtonText": "Learn More",
-    "primaryButtonLink": "/about",
-    "secondaryButtonText": "Get Involved",
-    "secondaryButtonLink": "/contact"
-  }
+  "heroTitle": "Empowering Through Love and Wisdom",
+  "heroDescription": "Join us in our mission to spread love, wisdom, and spiritual enlightenment to create positive change in the world.",
+  "heroImage": "/assets/images/logo-light.png",
+  "primaryButtonText": "Learn More",
+  "primaryButtonLink": "/about",
+  "secondaryButtonText": "Get Involved",
+  "secondaryButtonLink": "/contact"
+}

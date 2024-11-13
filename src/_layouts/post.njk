@@ -5,23 +5,25 @@ layout: base
     <h1>{{ title }}</h1>
 </div>
 
-<article class="blog-post-single">
-    {% if featuredImage %}
-    <div class="post-featured-image">
-        <img src="{{ featuredImage }}" alt="{{ title }}">
-    </div>
-    {% endif %}
-    
-    <div class="post-header">
-        {% if author %}<p class="post-author">By {{ author }}</p>{% endif %}
-        {% if date %}<time datetime="{{ date | dateIso }}" class="post-date">{{ date | dateDisplay }}</time>{% endif %}
-    </div>
-    
-    <div class="post-content">
-        {{ content | safe }}
-    </div>
+<div class="page-content">
+    <article class="blog-post-single">
+        {% if featuredImage %}
+        <div class="post-featured-image">
+            <img src="{{ featuredImage }}" alt="{{ title }}">
+        </div>
+        {% endif %}
+        
+        <div class="post-header">
+            {% if author %}<p class="post-author">By {{ author }}</p>{% endif %}
+            {% if date %}<time datetime="{{ date | dateIso }}" class="post-date">{{ date | dateDisplay }}</time>{% endif %}
+        </div>
+        
+        <div class="post-content">
+            {{ content | safe }}
+        </div>
 
-    <div class="post-footer">
-        <a href="/blog" class="btn-primary">← Back to Blog</a>
-    </div>
-</article>
+        <div class="post-footer">
+            <a href="/blog" class="btn-primary">← Back to Blog</a>
+        </div>
+    </article>
+</div>

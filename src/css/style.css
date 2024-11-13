@@ -6,7 +6,7 @@
   --text-dark: #333333;
   --max-width: 1200px;
   --mobile-padding: 1rem;
-  --header-height: 70px;    /* Increased from 60px to 70px */
+  --header-height: 70px;
 }
 
 /* Reset and base styles */
@@ -66,7 +66,7 @@ nav {
 }
 
 .logo-image {
-  height: 50px;  /* Increased from 40px to 50px */
+  height: 50px;
   width: auto;
   padding: 2px;
 }
@@ -88,12 +88,36 @@ nav a {
   font-weight: 500;
   padding: 0.25rem 0.5rem;
   display: block;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
   font-size: 0.95rem;
 }
 
 nav a:hover {
   color: var(--accent-gold);
+}
+
+/* Donate Button */
+.donate-button {
+  margin-left: 1rem;
+}
+
+.btn-donate {
+  background-color: var(--accent-gold);
+  color: var(--primary-blue) !important;
+  padding: 0.5rem 1.25rem !important;
+  border-radius: 25px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn-donate:hover {
+  background-color: #E5C158;
+  color: var(--primary-blue) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
 }
 
 /* Mobile Menu Toggle */
@@ -191,7 +215,7 @@ main {
 /* Media Queries */
 @media (max-width: 768px) {
   :root {
-    --header-height: 60px;  /* Slightly reduced height for tablets */
+    --header-height: 60px;
   }
 
   .menu-toggle {
@@ -226,21 +250,34 @@ main {
   }
 
   .logo-image {
-    height: 40px;  /* Adjusted for tablets */
+    height: 40px;
+  }
+
+  .donate-button {
+    margin: 0.5rem 0;
+  }
+
+  .btn-donate {
+    width: 200px;
+    margin: 0 auto;
   }
 }
 
 @media (max-width: 480px) {
   :root {
     --mobile-padding: 0.75rem;
-    --header-height: 55px;  /* Slightly reduced height for mobile */
+    --header-height: 55px;
   }
 
   .logo-image {
-    height: 35px;  /* Adjusted for mobile */
+    height: 35px;
   }
 
   .footer-content {
     grid-template-columns: 1fr;
+  }
+
+  .btn-donate {
+    width: 180px;
   }
 }

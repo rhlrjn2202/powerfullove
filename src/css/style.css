@@ -545,7 +545,7 @@ main {
 /* Logo Box Styles */
 .logo-box {
     width: 100px; /* Set the width of the box */
-    height: 100px; /* Set the height of the box */
+    height: 120px; /* Increased height of the box for better centering */
     display: flex;
     align-items: center; /* Center vertically */
     justify-content: center; /* Center horizontally */
@@ -558,7 +558,8 @@ main {
 
 .logo-image {
     width: 100%; /* Set width to 100% to fill the box */
-    height: 100%; /* Set height to 100% to fill the box */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 100%; /* Ensure the image does not exceed the box height */
     object-fit: cover; /* Ensure the image covers the box without distortion */
     border-radius: 50%; /* Make the image round */
 }

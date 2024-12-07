@@ -541,3 +541,21 @@ main {
     padding-right: 1rem;
   }
 }
+
+/* Logo Box Styles */
+.logo-box {
+    width: 100px; /* Set the width of the box */
+    height: 100px; /* Set the height of the box */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--text-white); /* Background color of the box */
+    border: 2px solid var(--primary-blue); /* Border color */
+    border-radius: 8px; /* Optional: rounded corners */
+    margin-right: 1rem; /* Space between logo and menu */
+}
+
+.logo-image {
+    max-width: 90%; /* Ensure the logo fits within the box */
+    max-height: 90%; /* Ensure the logo fits within the box */
+}

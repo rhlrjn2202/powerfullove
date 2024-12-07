@@ -556,6 +556,7 @@ main {
 }
 
 .logo-image {
-    max-width: 90%; /* Ensure the logo fits within the box */
-    max-height: 90%; /* Ensure the logo fits within the box */
+    width: 100%; /* Set width to 100% to fill the box */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Make the image round */
 }

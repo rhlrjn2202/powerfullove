@@ -547,16 +547,18 @@ main {
     width: 100px; /* Set the width of the box */
     height: 100px; /* Set the height of the box */
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
     background-color: var(--text-white); /* Background color of the box */
     border: 2px solid var(--primary-blue); /* Border color */
     border-radius: 8px; /* Optional: rounded corners */
     margin-right: 1rem; /* Space between logo and menu */
+    overflow: hidden; /* Ensure the image does not overflow the box */
 }
 
 .logo-image {
     width: 100%; /* Set width to 100% to fill the box */
-    height: auto; /* Maintain aspect ratio */
+    height: 100%; /* Set height to 100% to fill the box */
+    object-fit: cover; /* Ensure the image covers the box without distortion */
     border-radius: 50%; /* Make the image round */
 }

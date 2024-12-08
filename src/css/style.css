@@ -557,9 +557,10 @@ main {
 }
 
 .logo-image {
-    width: 70%; /* Set width to 70% to make the logo smaller */
+    width: 80%; /* Set width to 80% to make the logo smaller */
     height: auto; /* Maintain aspect ratio */
     max-height: 80%; /* Ensure the image does not exceed the box height */
     object-fit: contain; /* Ensure the image fits within the box without distortion */
-    border-radius: 50%; /* Make the image round */
+    margin: auto; /* Center the image */
+    display: block; /* Ensure the image is treated as a block element */
 }

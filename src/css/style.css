@@ -545,7 +545,7 @@ main {
 /* Logo Box Styles */
 .logo-box {
     width: 100px; /* Set the width of the box */
-    height: 120px; /* Height of the box */
+    height: 100px; /* Reduced height of the box for a better fit */
     display: flex;
     align-items: center; /* Center vertically */
     justify-content: center; /* Center horizontally */
